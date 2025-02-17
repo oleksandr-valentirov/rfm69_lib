@@ -13,14 +13,8 @@ typedef enum rfm69_mode {
     LISTEN
 } rfm69_mode_t;
 
-typedef enum rfm69_state {
-    IDLE = 0,
-    CONFIG,
-    TX,
-    RX
-} rfm69_state_t;
-
 /* getters */
+void rfm_read_version(uint8_t *dst);
 void rfm_get_rssi(uint8_t *dst);
 void rfm_get_irq_flags(uint16_t *dst);
 uint8_t rfm_is_calib_finished(void);

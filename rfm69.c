@@ -12,6 +12,10 @@
 void rfm_write(uint8_t addr, uint8_t *ptr, uint8_t len);
 void rfm_read(uint8_t addr, uint8_t *ptr, uint8_t len);
 
+void rfm_read_version(uint8_t *dst) {
+    rfm_read(RFM69_RegVersion, dst, 1);
+}
+
 void rfm_set_modulation(uint8_t data_mode, uint8_t type, uint8_t filter) {
     uint8_t data = (((data_mode & 3) << 5) | ((type & 3) << 3) | (filter & 3));
 
