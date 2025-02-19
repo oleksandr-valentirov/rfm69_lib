@@ -238,7 +238,7 @@ void rfm_set_packet_config1(uint8_t pm_fixed_payload_length, uint8_t dc_free, ui
 }
 
 void rfm_set_packet_config2(uint8_t delay, uint8_t force_rx, uint8_t auto_rx, uint8_t aes_on) {
-    uint8_t data = ((delay & 15) << 4 | (force_rx & 1) << 3 | (auto_rx & 1) << 1 | (aes_on & 1));
+    uint8_t data = ((delay & 15) << 4 | (force_rx & 1) << 2 | (auto_rx & 1) << 1 | (aes_on & 1));
 
     rfm_write(RFM69_RegPacketConfig2, &data, 1);
 }
